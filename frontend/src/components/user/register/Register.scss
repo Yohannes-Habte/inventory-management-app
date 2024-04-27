@@ -1,0 +1,94 @@
+@import "../../../styles/Variables.scss";
+@import "../../../styles/Mixins.scss";
+
+.signup-container {
+  width: $laptop;
+  margin: 2rem auto;
+
+  .signup-title {
+    @include title;
+  }
+
+  .signup-form {
+    width: $laptop;
+    margin: 1rem auto;
+    @include shadow2;
+
+    .inputs-wrapper {
+      @include twoGridTemplateEqualColumns;
+      padding: 0 1rem;
+
+      // Input container
+      .input-container {
+        @include inputContainer;
+        margin-bottom: 1rem;
+
+        .input-icon {
+          @include inputIcon;
+        }
+
+        .input-field {
+          @include inputField;
+        }
+
+        .input-label {
+          @include inputLabel;
+        }
+
+        .input-highlight {
+          @include inputHighlight;
+        }
+
+        .input-field:focus + .input-label {
+          @include focusInputFieldAndInputLabel;
+        }
+
+        .input-field:focus + .input-label + .input-highlight {
+          width: 100%;
+        }
+
+        .icon {
+          @include passwordDisplay;
+        }
+      }
+    }
+
+    // input consent
+    .consent-container {
+      @include flexRow;
+      padding: 0 1rem;
+
+      .user-signup-consent-input {
+        @include checkbox;
+      }
+
+      .user-signup-accept {
+        font-size: $afs;
+      }
+
+      .terms-of-use {
+        @include termOfUse;
+      }
+    }
+
+    // Button
+    .register-btn-container {
+      padding: 0 1rem;
+
+      .register-btn {
+        @include button1;
+      }
+    }
+
+    // Have an account
+    .have-account {
+      @include haveAccount;
+      padding: 0 1rem;
+
+      .link-to-login {
+        @include linkTo;
+        padding-left: 0.5rem;
+      }
+    }
+  }
+}
