@@ -1,15 +1,17 @@
 import React from "react";
-import "./Header.scss"
+import "./Header.scss";
 import { Link } from "react-router-dom";
 import Navbar from "../navbar/Navbar";
 import Search from "../../../search/Search";
+import logo from "../../../../assets/logo.png";
+import model from "../../../../assets/model.png";
 
 const Header = () => {
   return (
     <header className="header">
       {/* Top part of the header */}
       <aside className="logo-register-login-wrapper">
-        <h1> LisaStore </h1>
+        <h1> Lisa Fashion Store </h1>
         {/* Register and login */}
         <ul className="register-login-box">
           <li className="account-item">
@@ -30,14 +32,14 @@ const Header = () => {
       <div className="images-search-wrapper">
         <figure className="image-container">
           <Link to="/">
-            <img className="logo-image" src={""} alt="LisaConsult Logo" />
+            <img className="logo-image" src={logo} alt="LisaConsult Logo" />
           </Link>
         </figure>
 
         <Search />
 
         <figure className="image-container">
-          <img className="image" src={""} alt="Logo" />
+          <img className="image" src={model} alt="Logo" />
         </figure>
       </div>
 
