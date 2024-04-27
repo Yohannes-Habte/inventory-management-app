@@ -1,0 +1,84 @@
+@import "../../../styles/Variables.scss";
+@import "../../../styles/Mixins.scss";
+
+.login-container {
+  width: $laptop;
+  margin: 1rem auto;
+
+  .login-title {
+    @include title;
+  }
+
+  .login-form {
+    width: 50%;
+    margin: 1rem auto;
+    
+    .input-container {
+      @include inputContainer;
+      margin-bottom: 1rem;
+
+      .input-icon {
+        @include inputIcon;
+      }
+
+      .input-field {
+        @include inputField;
+      }
+
+      .input-label {
+        @include inputLabel;
+      }
+
+      .input-highlight {
+        @include inputHighlight;
+      }
+
+      .input-field:focus + .input-label {
+        @include focusInputFieldAndInputLabel;
+      }
+
+      .input-field:focus + .input-label + .input-highlight {
+        width: 100%;
+      }
+
+      .icon {
+        @include passwordDisplay;
+      }
+    }
+
+    // checkbox and forgot password
+    .keep-me-signin-forgot-password-wrapper {
+      @include flexRow;
+      align-items: center;
+
+      .checkbox-and-keep-me-signin {
+        @include flexRow;
+
+        .checkbox-field {
+          @include checkbox;
+        }
+
+        .keep-me-login {
+          font-size: $afs;
+          margin-bottom: 1rem;
+        }
+      }
+
+      .forgot-link {
+        @include linkTo;
+      }
+    }
+
+    .user-login-btn {
+      @include button1;
+    }
+
+    .have-no-account {
+      @include haveAccount;
+
+      .link-to {
+        @include linkTo;
+      }
+    }
+  }
+}
