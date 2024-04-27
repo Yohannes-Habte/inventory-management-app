@@ -2,9 +2,11 @@
 @import '../../../../styles/Mixins.scss';
 
 .navbar {
+  background-color: $navbar-bg;
   .navbar-items {
     @include flexRow;
     gap: 1rem;
+    padding: 1rem;
 
     .navbar-item {
       .passive-navbar-item {
