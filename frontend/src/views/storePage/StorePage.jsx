@@ -1,13 +1,15 @@
-import React from 'react'
+import React from "react";
+import Header from "../../components/user/layout/header/Header";
 
 const StorePage = () => {
   return (
     <main>
-    <article>
-      <h1>Store page</h1>
-    </article>
-  </main>
-  )
-}
+      <Header />
+      <article>
+        <h1>Store page</h1>
+      </article>
+    </main>
+  );
+};
 
-export default StorePage
+export default StorePage;
