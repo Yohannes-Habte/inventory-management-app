@@ -1,0 +1,19 @@
+@import '../../../../styles/Variables.scss';
+@import '../../../../styles/Mixins.scss';
+
+.navbar {
+  .navbar-items {
+    @include flexRow;
+    gap: 1rem;
+
+    .navbar-item {
+      .passive-navbar-item {
+        @include passiveNavbar;
+      }
+
+      .active-navbar-item {
+        @include activeNavbar;
+      }
+    }
+  }
+}

@@ -1,0 +1,44 @@
+@import '../../../../styles/Variables.scss';
+@import '../../../../styles/Mixins.scss';
+
+.header {
+  .logo-register-login-wrapper {
+    @include flexSpaceBetween;
+    background-color: $navbar-bg;
+    padding: 1rem 2rem;
+    .text-logo {
+      @include subTitle;
+    }
+
+    .register-login-box{
+      @include flexRow;
+      gap: 1rem;
+
+      .account-item {
+        .acount {}
+      }
+    }
+  }
+
+  .images-search-wrapper {
+    @include flexSpaceBetween;
+    padding: 0 2rem;
+    background-color: $header-bg;
+
+    .image-container {
+      .logo-image {
+        width: 15rem;
+        height: 15rem;
+        object-fit: contain;
+        border-radius: $radius;
+      }
+
+      .image {
+        width: 15rem;
+        height: 15rem;
+        object-fit: contain;
+      }
+
+    }
+  }
+}

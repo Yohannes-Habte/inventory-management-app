@@ -1,15 +1,15 @@
 import React from "react";
 import Header from "../../components/user/layout/header/Header";
 
-const ContactPage = () => {
+const ProductsPage = () => {
   return (
     <main>
-       <Header />
+        <Header />
       <article>
-        <h1>Contact page</h1>
+        <h1>Products page</h1>
       </article>
     </main>
   );
 };
 
-export default ContactPage;
+export default ProductsPage;

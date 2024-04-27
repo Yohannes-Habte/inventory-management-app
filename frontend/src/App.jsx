@@ -9,6 +9,7 @@ import ContactPage from "./views/contactPage/ContactPage";
 import RegisterPage from "./views/userPages/registerPage/RegisterPage";
 import LoginPage from "./views/userPages/loginPage/LoginPage";
 import ProfilePage from "./views/userPages/profilePage/ProfilePage";
+import ProductsPage from "./views/productsPage/ProductsPage";
 
 const App = () => {
   return (
@@ -17,6 +18,7 @@ const App = () => {
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/about" element={<AboutPage />} />
+          <Route path="/products" element={<ProductsPage />} />
           <Route path="/store" element={<StorePage />} />
           <Route path="/contact" element={<ContactPage />} />
 
