@@ -35,8 +35,8 @@ const connectToMongoDB = async () => {
 app.use(morgan("tiny"));
 
 // End Poits
-app.use("/auths", authRouter)
-app.use("/users", userRouter)
+app.use("/api/auths", authRouter)
+app.use("/api/users", userRouter)
 
 // Port
 const port = process.env.PORT || 4000;

@@ -83,11 +83,14 @@ const Register = () => {
         lastName: lastName,
         email: email,
         password: password,
+        agree: agree
       };
-      const { data } = await axios.post(`/auth/register`, newUser);
+      const { data } = await axios.post(`http://localhost:9000/api/auths/register`, newUser);
 
       navigate("/login");
-    } catch (err) {}
+    } catch (err) {
+      console.log(err)
+    }
   };
   return (
     <section className="signup-container">
