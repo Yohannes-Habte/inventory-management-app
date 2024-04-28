@@ -6,6 +6,10 @@ import dotenv from "dotenv";
 import cookieParser from "cookie-parser";
 import colors from "colors";
 
+// Routers
+import authRouter from "./routes/authsRoutes.js";
+import userRouter from "./routes/userRoutes.js";
+
 // Express app
 const app = express();
 app.use(cookieParser());
@@ -30,9 +34,9 @@ const connectToMongoDB = async () => {
 
 app.use(morgan("tiny"));
 
-app.get("/user", (req, res) => {
-  res.send("Habtemariam");
-});
+// End Poits
+app.use("/auths", authRouter)
+app.use("/users", userRouter)
 
 // Port
 const port = process.env.PORT || 4000;
