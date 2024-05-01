@@ -1,63 +1,64 @@
-import React from 'react';
-import { FaUser } from 'react-icons/fa';
-import { MdPhoneInTalk } from 'react-icons/md';
-import { MdEmail } from 'react-icons/md';
-import { RiLockPasswordFill } from 'react-icons/ri';
-import { AiFillEyeInvisible } from 'react-icons/ai';
-import { HiOutlineEye } from 'react-icons/hi';
-import { MdClose } from 'react-icons/md';
-import { MdDelete } from 'react-icons/md';
-import { FaAddressCard } from 'react-icons/fa';
-import { RiFileZipFill } from 'react-icons/ri';
-import { SiGooglestreetview } from 'react-icons/si';
-import { IoLocation } from 'react-icons/io5';
-import { FaCloudUploadAlt } from 'react-icons/fa';
-import { MdMessage } from 'react-icons/md';
-import { FaUsers } from 'react-icons/fa';
-import { FaCar } from 'react-icons/fa';
-import { FaTwitterSquare } from 'react-icons/fa';
-import { FaFacebookSquare } from 'react-icons/fa';
-import { FaLinkedin } from 'react-icons/fa';
-import { FaInstagramSquare } from 'react-icons/fa';
-import { FaYoutubeSquare } from 'react-icons/fa';
-import { FaGithubSquare } from 'react-icons/fa';
-import { FaTiktok } from 'react-icons/fa';
-import { BsBank } from 'react-icons/bs';
-import { GrCreditCard } from 'react-icons/gr';
-import { BsCreditCard2FrontFill } from 'react-icons/bs';
-import { FaBars } from 'react-icons/fa';
-import { MdKeyboardArrowRight } from 'react-icons/md';
-import { MdKeyboardArrowDown } from 'react-icons/md';
-import { MdKeyboardArrowUp } from 'react-icons/md';
-import { MdKeyboardArrowLeft } from 'react-icons/md';
-import { GrLanguage } from 'react-icons/gr';
-import { IoMdLogOut } from 'react-icons/io';
-import { IoCartSharp } from 'react-icons/io5';
-import { FcDepartment } from 'react-icons/fc';
-import { RiAdminFill } from 'react-icons/ri';
-import { MdArtTrack } from 'react-icons/md';
-import { RiRefund2Fill } from 'react-icons/ri';
-import { SiCoursera } from 'react-icons/si';
-import { FaProductHunt } from 'react-icons/fa';
-import { SiEventbrite } from 'react-icons/si';
-import { FcAdvertising } from 'react-icons/fc';
-import { FaRProject } from 'react-icons/fa';
-import { IoMdGitPullRequest } from 'react-icons/io';
-import { RiCalendarTodoLine } from 'react-icons/ri';
-import { FcManager } from 'react-icons/fc';
-import { MdAccountCircle } from 'react-icons/md';
-import { FaUserGraduate } from 'react-icons/fa';
-import { FaParagraph } from 'react-icons/fa';
-import { MdDashboard } from 'react-icons/md';
-import { FcRating } from 'react-icons/fc';
-import { BiCategory } from 'react-icons/bi';
-import { FaCriticalRole } from 'react-icons/fa';
-import { MdDateRange } from 'react-icons/md';
-import { FaUniversity } from 'react-icons/fa';
-import { GrStatusGood } from 'react-icons/gr';
-import { CgWebsite } from 'react-icons/cg';
-import { FaMoneyCheckAlt } from 'react-icons/fa';
-import { FaRegEdit } from 'react-icons/fa';
+import React from "react";
+import { FaUser } from "react-icons/fa";
+import { MdPhoneInTalk } from "react-icons/md";
+import { MdEmail } from "react-icons/md";
+import { RiLockPasswordFill } from "react-icons/ri";
+import { AiFillEyeInvisible } from "react-icons/ai";
+import { HiOutlineEye } from "react-icons/hi";
+import { MdClose } from "react-icons/md";
+import { MdDelete } from "react-icons/md";
+import { FaAddressCard } from "react-icons/fa";
+import { RiFileZipFill } from "react-icons/ri";
+import { SiGooglestreetview } from "react-icons/si";
+import { IoLocation } from "react-icons/io5";
+import { FaCloudUploadAlt } from "react-icons/fa";
+import { MdMessage } from "react-icons/md";
+import { FaUsers } from "react-icons/fa";
+import { FaCar } from "react-icons/fa";
+import { FaTwitterSquare } from "react-icons/fa";
+import { FaFacebookSquare } from "react-icons/fa";
+import { FaLinkedin } from "react-icons/fa";
+import { FaInstagramSquare } from "react-icons/fa";
+import { FaYoutubeSquare } from "react-icons/fa";
+import { FaGithubSquare } from "react-icons/fa";
+import { FaTiktok } from "react-icons/fa";
+import { BsBank } from "react-icons/bs";
+import { GrCreditCard } from "react-icons/gr";
+import { BsCreditCard2FrontFill } from "react-icons/bs";
+import { FaBars } from "react-icons/fa";
+import { MdKeyboardArrowRight } from "react-icons/md";
+import { MdKeyboardArrowDown } from "react-icons/md";
+import { MdKeyboardArrowUp } from "react-icons/md";
+import { MdKeyboardArrowLeft } from "react-icons/md";
+import { GrLanguage } from "react-icons/gr";
+import { IoMdLogOut } from "react-icons/io";
+import { IoCartSharp } from "react-icons/io5";
+import { FcDepartment } from "react-icons/fc";
+import { RiAdminFill } from "react-icons/ri";
+import { MdArtTrack } from "react-icons/md";
+import { RiRefund2Fill } from "react-icons/ri";
+import { SiCoursera } from "react-icons/si";
+import { FaProductHunt } from "react-icons/fa";
+import { SiEventbrite } from "react-icons/si";
+import { FcAdvertising } from "react-icons/fc";
+import { FaRProject } from "react-icons/fa";
+import { IoMdGitPullRequest } from "react-icons/io";
+import { RiCalendarTodoLine } from "react-icons/ri";
+import { FcManager } from "react-icons/fc";
+import { MdAccountCircle } from "react-icons/md";
+import { FaUserGraduate } from "react-icons/fa";
+import { FaParagraph } from "react-icons/fa";
+import { MdDashboard } from "react-icons/md";
+import { FcRating } from "react-icons/fc";
+import { BiCategory } from "react-icons/bi";
+import { FaCriticalRole } from "react-icons/fa";
+import { MdDateRange } from "react-icons/md";
+import { FaUniversity } from "react-icons/fa";
+import { GrStatusGood } from "react-icons/gr";
+import { CgWebsite } from "react-icons/cg";
+import { FaMoneyCheckAlt } from "react-icons/fa";
+import { FaRegEdit } from "react-icons/fa";
+import { FaSearch } from "react-icons/fa";
 
 const ReactIcons = () => {
   // user icons
@@ -193,6 +194,9 @@ const ReactIcons = () => {
   // Edit Icon
   const editIcon = <FaRegEdit />;
 
+  // Edit Icon
+  const searchIcon = <FaSearch />;
+
   return {
     userIcon,
     usersIcon,
@@ -254,6 +258,7 @@ const ReactIcons = () => {
     websiteIcon,
     priceIcon,
     editIcon,
+    searchIcon,
   };
 };
 
