@@ -1,44 +1,50 @@
-@import '../../../../styles/Variables.scss';
-@import '../../../../styles/Mixins.scss';
+@import "../../../../styles/Variables.scss";
+@import "../../../../styles/Mixins.scss";
 
 .header {
   .logo-register-login-wrapper {
     @include flexSpaceBetween;
     background-color: $navbar-bg;
     padding: 1rem 2rem;
-    .text-logo {
-      @include subTitle;
+
+    .logo-container {
+      width: 2.5rem;
+      height: 2.5rem;
+
+      .logo-image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: $radius;
+      }
     }
 
-    .register-login-box{
+    .register-login-box {
       @include flexRow;
       gap: 1rem;
 
       .account-item {
-        .acount {}
+        .acount {
+        }
       }
     }
   }
 
-  .images-search-wrapper {
+  .advertisement-fashion-wrapper {
     @include flexSpaceBetween;
+    gap: 1rem;
     padding: 0 2rem;
     background-color: $header-bg;
+    
 
     .image-container {
-      .logo-image {
-        width: 15rem;
-        height: 15rem;
-        object-fit: contain;
-        border-radius: $radius;
-      }
-
+ 
       .image {
-        width: 15rem;
-        height: 15rem;
-        object-fit: contain;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        
       }
-
     }
   }
 }
