@@ -1,0 +1,69 @@
+@import '../../../styles/Variables.scss';
+@import '../../../styles/Mixins.scss';
+
+.category-modal {
+  @include modal;
+
+  .new-category-popup-Box {
+    @include popupBox;
+    width: 70%;
+    margin: auto;
+
+    .close {
+      @include closeModal;
+    }
+
+    .add-category-title {
+      @include subTitle;
+    }
+
+    .add-category-form {
+      @include flexColumn;
+
+      .input-container {
+        @include inputContainer;
+
+        .icon {
+          @include inputIcon;
+        }
+
+        .input-field {
+          @include inputField;
+        }
+
+        .input-label {
+          @include inputLabel;
+        }
+
+        .input-highligh {
+          @include inputHighlight;
+        }
+
+        .input-field:focus + .input-label {
+          @include focusInputFieldAndInputLabel;
+        }
+      }
+
+      .input-consent {
+        @include flexRow;
+
+        .consent-checkbox {
+          @include checkbox;
+        }
+
+        .accept {
+          @include linkTo;
+          color: $black;
+        }
+
+        .terms-of-user {
+          @include termOfUse;
+        }
+      }
+
+      .add-new-category-btn {
+        @include button2;
+      }
+    }
+  }
+}

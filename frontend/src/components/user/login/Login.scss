@@ -12,6 +12,8 @@
   .login-form {
     width: 50%;
     margin: 1rem auto;
+    @include shadow2;
+    padding: 2rem;
     
     .input-container {
       @include inputContainer;
@@ -43,6 +45,7 @@
 
       .icon {
         @include passwordDisplay;
+        color: $green;
       }
     }
 
@@ -50,6 +53,7 @@
     .keep-me-signin-forgot-password-wrapper {
       @include flexRow;
       align-items: center;
+      margin: 2rem 0 1rem 0;
 
       .checkbox-and-keep-me-signin {
         @include flexRow;

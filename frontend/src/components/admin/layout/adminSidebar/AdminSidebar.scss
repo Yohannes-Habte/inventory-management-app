@@ -1,0 +1,110 @@
+@import "../../../../styles/Variables.scss";
+@import "../../../../styles/Mixins.scss";
+
+.admin-sidebar-container {
+  width: $desktopSidebarWidth;
+  background-color: $sidebar-bg;
+  padding: 1rem;
+  min-height: 100vh;
+  @include flexColumn;
+
+  .admin-sidebar-title {
+    font-size: $afs;
+    padding-left: 0.3rem;
+  }
+
+  .admin-sidebar-items-wrapper {
+
+    // Dropdown sidebar items
+    .admin-sidebar-aside {
+      @include flexSpaceBetween;
+      align-items: center;
+      font-size: $afs;
+      padding: 0.5rem 0;
+      cursor: pointer;
+
+      &:hover {
+        color: $red;
+      }
+
+      .admin-sidebar-h4 {
+        font-weight: 400;
+        padding: 0.3rem 0;
+
+        .icon {
+          color: $green;
+          margin-right: 0.3rem;
+          font-size: $afs;
+        }
+      }
+    }
+
+    .admin-dropdown-sidebar-items {
+      @include flexColumn;
+      padding-left: 1rem;
+
+      .active-sidebar-item {
+        display: flex;
+        gap: $iconGap;
+        color: $red;
+        margin: 0.5rem;
+
+        .sidebar-icon {
+          font-size: $afs;
+        }
+      }
+
+      .passive-sidebar-item {
+        display: flex;
+        gap: $iconGap;
+        color: $black;
+        margin: 0.5rem;
+        cursor: pointer;
+
+        &:hover {
+          color: $tomato;
+        }
+
+        .sidebar-icon {
+          font-size: $afs;
+          color: $green;
+        }
+      }
+    }
+
+     // Now Dropdown sidebar items
+
+    .admin-sidebar-items {
+      @include flexColumn;
+      margin-top: 1rem;
+
+      .active-sidebar-item {
+        display: flex;
+        gap: $iconGap;
+        color: $red;
+        padding: 0.3rem 0;
+
+        .sidebar-icon {
+          font-size: $afs;
+        }
+      }
+
+      .passive-sidebar-item {
+        display: flex;
+        gap: $iconGap;
+        color: $black;
+        padding: 0.3rem 0;
+        cursor: pointer;
+
+        &:hover {
+          color: $tomato;
+        }
+
+        .sidebar-icon {
+          font-size: $afs;
+          color: $green;
+        }
+      }
+    }
+  }
+}
