@@ -59,6 +59,10 @@ import { CgWebsite } from "react-icons/cg";
 import { FaMoneyCheckAlt } from "react-icons/fa";
 import { FaRegEdit } from "react-icons/fa";
 import { FaSearch } from "react-icons/fa";
+import { MdOutlineViewCompact } from "react-icons/md";
+import { BiSolidPurchaseTag } from "react-icons/bi";
+import { FaFileInvoiceDollar } from "react-icons/fa";
+import { FaPrint } from "react-icons/fa";
 
 const ReactIcons = () => {
   // user icons
@@ -189,13 +193,23 @@ const ReactIcons = () => {
   const websiteIcon = <CgWebsite />;
 
   // price icon
-  const priceIcon = <FaMoneyCheckAlt />;
 
   // Edit Icon
   const editIcon = <FaRegEdit />;
 
   // Edit Icon
   const searchIcon = <FaSearch />;
+
+  // Summary Icon
+  const summaryIcon = <MdOutlineViewCompact />;
+
+  // Purchase, price and invoice Icons
+  const purchaseIcon = <BiSolidPurchaseTag />;
+  const invoiceIcon = <FaFileInvoiceDollar />;
+  const priceIcon = <FaMoneyCheckAlt />;
+
+  // Print Icon
+  const printIcon = <FaPrint />;
 
   return {
     userIcon,
@@ -256,9 +270,13 @@ const ReactIcons = () => {
     universityIcon,
     statusIcon,
     websiteIcon,
-    priceIcon,
     editIcon,
     searchIcon,
+    summaryIcon,
+    purchaseIcon,
+    priceIcon,
+    invoiceIcon,
+    printIcon,
   };
 };
 

@@ -1,0 +1,28 @@
+@import "../../../styles/Variables.scss";
+@import "../../../styles/Mixins.scss";
+
+.All-suppliers-container {
+  width: 100%;
+  .suppliers-title {
+    @include subTitle;
+  }
+
+  .add-supplier-wrapper {
+    @include flexSpaceBetween;
+    margin-bottom: 1rem;
+
+    .add-supplier-title {
+      @include subTitle;
+    }
+
+    .add-supplier-btn {
+      @include button2;
+    }
+  }
+
+  .suppliers-list-table-wrapper {
+    .suppliers-list-table-title {
+      @include subTitle;
+    }
+  }
+}

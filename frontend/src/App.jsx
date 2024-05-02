@@ -10,6 +10,7 @@ import RegisterPage from "./views/userPages/registerPage/RegisterPage";
 import LoginPage from "./views/userPages/loginPage/LoginPage";
 import ProfilePage from "./views/userPages/profilePage/ProfilePage";
 import ProductsPage from "./views/productsPage/ProductsPage";
+import AdminDashboardPage from "./views/adminPages/adminDashboardPage/AdminDashboardPage";
 
 const App = () => {
   return (
@@ -26,6 +27,9 @@ const App = () => {
           <Route path="/register" element={<RegisterPage />} />
           <Route path="/login" element={<LoginPage />} />
           <Route path="/profile" element={<ProfilePage />} />
+
+          {/* Admin Pages */}
+          <Route path="/admin/dashboard" element={<AdminDashboardPage />} />
         </Routes>
 
         {/* React toastify */}

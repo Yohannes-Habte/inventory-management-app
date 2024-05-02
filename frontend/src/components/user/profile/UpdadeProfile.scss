@@ -2,7 +2,7 @@
 @import '../../../styles/Mixins.scss';
 
 .user-profile-container {
-  width: $laptop;
+  width: $desktop;
   margin: 1rem auto;
 
   .update-user-profile-wrapper {
@@ -10,6 +10,7 @@
 
     .update-user-profile-title {
       @include subTitle;
+      text-align: center;
     }
 
     // Error message

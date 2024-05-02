@@ -29,6 +29,7 @@
 
         .input-field {
           @include inputField;
+         
         }
 
         .input-label {
@@ -49,6 +50,7 @@
 
         .icon {
           @include passwordDisplay;
+          color: $green;
         }
       }
     }

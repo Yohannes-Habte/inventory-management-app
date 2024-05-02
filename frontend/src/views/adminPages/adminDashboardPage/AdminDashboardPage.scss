@@ -1,0 +1,15 @@
+@import "../../../styles/Variables.scss";
+@import "../../../styles/Mixins.scss";
+
+.admin-dashboard-page {
+  .admin-dashboard-page-container {
+    .admin-dashboard-page-title {
+      @include title;
+      background-color: $sidebar-bg;
+    }
+
+    .admin-dashboard-sidebar-main-wrapper{
+      @include flexRow;
+    }
+  }
+}

@@ -1,0 +1,52 @@
+@import "../../../../styles/Variables.scss";
+@import "../../../../styles/Mixins.scss";
+
+.user-sidebar-container {
+  width: $desktopSidebarWidth;
+  background-color: $sidebar-bg;
+  padding: 1rem;
+  min-height: 100vh;
+
+  .user-sidebar-title {
+    font-size: $afs;
+    @include flexRow;
+    align-items: center;
+    padding-left: 0.5rem;
+  }
+
+  .sidebar-items-wrapper {
+    margin-top: 1rem;
+
+    .sidebar-items {
+      @include flexColumn;
+
+      .active-sidebar-item {
+        display: flex;
+        gap: $iconGap;
+        color: $red;
+        margin: 0.5rem;
+
+        .sidebar-icon {
+            font-size: $afs;
+        }
+      }
+
+      .passive-sidebar-item {
+        display: flex;
+        gap: $iconGap;
+        color: $black;
+        margin: 0.5rem;
+        cursor: pointer;
+
+        &:hover {
+            color: $tomato;
+        }
+
+        .sidebar-icon {
+            font-size: $afs;
+            color: $green;
+        }
+      }
+    }
+  }
+}

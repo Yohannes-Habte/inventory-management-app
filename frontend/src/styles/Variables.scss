@@ -1,6 +1,6 @@
 // Fonts
-$font: 'Roboto Condensed', sans-serif;
-$font-family: 'Ubuntu Mono', monospace;
+$font: "Roboto Condensed", sans-serif;
+$font-family: "Ubuntu Mono", monospace;
 
 // Font Color
 $green: #228b22;
@@ -34,8 +34,8 @@ $lfw: 800;
 
 // Background
 $header-bg: #e6e6fa;
-$navbar-bg: #eaf3fa;;
-$box-bg: #f2e6fc;
+$navbar-bg: #eaf3fa;
+$sidebar-bg: #f0f8ff;
 $main-bg: #f8f8ff;
 $section-bg: #dedef8;
 $aside-bg: #f0f8ff;
@@ -60,6 +60,9 @@ $buttonPadding: 0.2rem;
 $boxPadding: 0.5rem 1rem;
 $textPadding: 0.3rem 0.5rem;
 
+// Gap
+$iconGap: 0.4rem ;
+
 // border radius
 $radius: 4px;
 $borderColor: #ced4da;
@@ -69,3 +72,15 @@ $desktop: 85%;
 $laptop: 90%;
 $tablet: 95%;
 $mobile: 98%;
+
+// Sidebar view width
+$desktopSidebarWidth: 15%;
+$laptopSidebarWidth: 17%;
+$tabletSidebarWidth: 15%;
+$mobileSidebarWidth: 5%;
+
+// Main Page view width
+$desktopMainWidth: 80%;
+$laptopMainWidth: 80%;
+$tabletMainWidth: 80%;
+$mobileMainWidth: 95%;

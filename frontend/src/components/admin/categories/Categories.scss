@@ -1,0 +1,40 @@
+@import '../../../styles/Variables.scss';
+@import '../../../styles/Mixins.scss';
+
+.categories-wrapper {
+  width: 100%;
+  .categories-title {
+    @include subTitle;
+  }
+
+  .add-category-wrapper {
+    @include flexSpaceBetween;
+    margin-bottom: 1rem;
+
+    .add-category-title {
+      @include subTitle;
+    }
+
+    .add-category-btn {
+      @include button2;
+    }
+  }
+
+  .category-wrapper {
+    .category-title {
+      @include subTitle;
+    }
+
+    .category-description {
+      @include paragraph;
+    }
+
+    .category-keywords {
+      @include paragraph;
+    }
+
+    .category-department {
+      @include paragraph;
+    }
+  }
+}
