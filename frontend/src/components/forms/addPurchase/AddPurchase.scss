@@ -1,0 +1,79 @@
+@import "../../../styles/Variables.scss";
+@import "../../../styles/Mixins.scss";
+
+.add-purchase-modal {
+  @include modal;
+
+  .add-purchase-popup-box {
+    @include popupBox;
+    width: 700px;
+   height: fit-content;
+
+    .close {
+      @include closeModal;
+    }
+
+    .add-purchase-popup-box-title {
+      @include title;
+    }
+
+    .add-purchase-form {
+      @include flexColumn;
+
+      .inputs-wrapper {
+        @include twoGridTemplateEqualColumns;
+        width: $laptop;
+
+        .input-container {
+          @include inputContainer;
+          .icon {
+            @include inputIcon;
+          }
+
+          .input-field {
+            @include inputField;
+          }
+
+          .input-label {
+            @include inputLabel;
+          }
+
+          .input-highlight {
+            @include inputHighlight;
+          }
+
+          .input-field:focus + .input-label {
+            top: -0.4rem;
+            font-size: $sfs;
+            color: $gray;
+          }
+
+          .input-field:focus + .input-label + .input-highlight {
+            width: 100%;
+          }
+        }
+      }
+
+      .input-consent {
+        @include flexRow;
+
+        .checkbox {
+          @include checkbox;
+        }
+
+        .accept {
+          @include termOfUse;
+          color: $black;
+        }
+
+        .terms-of-user {
+          @include termOfUse;
+        }
+      }
+
+      .add-new-purchase-btn {
+        @include button1;
+      }
+    }
+  }
+}
