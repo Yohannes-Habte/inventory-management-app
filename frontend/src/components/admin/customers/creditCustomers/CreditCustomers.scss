@@ -1,0 +1,26 @@
+@import "../../../../styles/Variables.scss";
+@import "../../../../styles/Mixins.scss";
+
+.credit-customers-container {
+    .credit-customers-container-title {
+        @include title;
+        font-size: $afs;
+    }
+
+    .credit-customer-data-print-wrapper {
+        @include flexSpaceBetween;
+        margin-bottom: 1rem;
+
+        .credit-customer-data-print-wrapper-title {
+            @include subTitle;
+        }
+
+        .credit-customer-print {
+            @include button2;
+
+            .print-icon {
+                color: $green;
+            }
+        }
+    }
+}
