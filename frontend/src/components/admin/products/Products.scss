@@ -1,0 +1,28 @@
+@import "../../../styles/Variables.scss";
+@import "../../../styles/Mixins.scss";
+
+.All-products-container {
+  width: 100%;
+  .products-title {
+    @include subTitle;
+  }
+
+  .add-product-wrapper {
+    @include flexSpaceBetween;
+    margin-bottom: 1rem;
+
+    .add-product-title {
+      @include subTitle;
+    }
+
+    .add-product-btn {
+      @include button2;
+    }
+  }
+
+  .product-lists-table-wrapper {
+    .product-lists-table-title {
+      @include subTitle;
+    }
+  }
+}

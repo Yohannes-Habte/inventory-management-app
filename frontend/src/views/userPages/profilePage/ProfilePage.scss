@@ -1,0 +1,15 @@
+@import "../../../styles/Variables.scss";
+@import "../../../styles/Mixins.scss";
+
+.user-profile-page {
+  .user-profile-page-container {
+    .user-profile-page-title {
+      @include title;
+      background-color: $sidebar-bg;
+    }
+
+    .user-profile-sidebar-and-main-wrapper {
+      @include flexRow;
+    }
+  }
+}
