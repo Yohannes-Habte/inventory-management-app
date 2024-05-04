@@ -7,7 +7,7 @@
   .add-purchase-popup-box {
     @include popupBox;
     width: 700px;
-   height: fit-content;
+  
 
     .close {
       @include closeModal;
@@ -22,7 +22,7 @@
 
       .inputs-wrapper {
         @include twoGridTemplateEqualColumns;
-        width: $laptop;
+     
 
         .input-container {
           @include inputContainer;
@@ -53,6 +53,41 @@
           }
         }
       }
+
+      // Textarea input container
+      .input-textarea-container {
+        @include inputContainer;
+
+        .icon {
+          @include inputIcon;
+        }
+
+        .textarea-input-field {
+          @include inputField;
+        }
+
+        .textarea-input-label {
+          @include inputLabel;
+        }
+
+        .textarea-input-highlight {
+          @include inputHighlight;
+        }
+
+        .textarea-input-field:focus + .textarea-input-label {
+          top: -0.4rem;
+          font-size: $sfs;
+          color: $gray;
+        }
+
+        .textarea-input-field:focus
+          + .textarea-input-label
+          + .textarea-input-highlight {
+          width: 100%;
+        }
+      }
+
+      // Consent checkbox container
 
       .input-consent {
         @include flexRow;

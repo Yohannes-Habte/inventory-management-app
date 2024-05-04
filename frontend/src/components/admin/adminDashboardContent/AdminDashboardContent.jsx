@@ -17,6 +17,7 @@ import PrintInvoiceList from "../invoice/printInvoiceList/PrintInvoiceList";
 import StockReport from "../stock/stockReport/StockReport";
 import SupplierProduct from "../stock/supplierProductWise/SupplierProduct";
 import Support from "../support/Support";
+import Units from "../units/Units";
 
 const AdminDashboardContent = ({ isActive }) => {
   return (
@@ -70,9 +71,10 @@ const AdminDashboardContent = ({ isActive }) => {
       {isActive === 17 && <SupplierProduct />}
 
 
-      {/* Support */}
+      {/* Unit and Support*/}
+      {isActive === 18 && <Units />}
 
-      {isActive === 18 && <Support />}
+      {isActive === 19 && <Support />}
    
     </article>
   );
