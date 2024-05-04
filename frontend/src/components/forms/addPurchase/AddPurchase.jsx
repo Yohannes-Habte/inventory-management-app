@@ -9,12 +9,26 @@ const initialState = {
   purchaseDate: "",
   supplierName: "",
   productName: "",
+  productPrice: "",
   productQuantity: "",
-  categoryName: "",
+  productCategory: "",
+  productTag: "",
+  productDescription: "",
 };
 const AddPurchase = ({ setOpenPurchase }) => {
   // Global icons
-  const { closeIcon, categoryIcon, depIcon, paragraphIcon } = ReactIcons();
+  const {
+    closeIcon,
+    categoryIcon,
+    serialIcon,
+    messageIcon,
+    priceIcon,
+    dateIcon,
+    userIcon,
+    productIcon,
+    quantityIcon,
+    tagIcon,
+  } = ReactIcons();
 
   // Local state variables
   const [purchaseInfos, setPurchaseInfos] = useState(initialState);
@@ -26,8 +40,11 @@ const AddPurchase = ({ setOpenPurchase }) => {
     purchaseDate,
     supplierName,
     productName,
+    productPrice,
     productQuantity,
-    categoryName,
+    productCategory,
+    productTag,
+    productDescription,
   } = purchaseInfos;
 
   // Handle input change
@@ -39,12 +56,15 @@ const AddPurchase = ({ setOpenPurchase }) => {
   // Reset the variables to their initial value or state
   const reset = () => {
     setPurchaseInfos({
-      purchaseNumber: "",
-      date: "",
+      purchaseNo: "",
+      purchaseDate: "",
       supplierName: "",
       productName: "",
-      quantity: "",
-      categoryName: "",
+      productPrice: "",
+      productQuantity: "",
+      productCategory: "",
+      productTag: "",
+      productDescription: "",
     });
     setAgree(false);
   };
@@ -59,8 +79,11 @@ const AddPurchase = ({ setOpenPurchase }) => {
         purchaseDate: purchaseDate,
         supplierName: supplierName,
         productName: productName,
+        productPrice: productPrice,
         productQuantity: productQuantity,
-        categoryName: categoryName,
+        productCategory: productCategory,
+        productTag: productTag,
+        productDescription: productDescription,
         agree: agree,
       };
       const { data } = await axios.post(
@@ -85,7 +108,7 @@ const AddPurchase = ({ setOpenPurchase }) => {
           <div className="inputs-wrapper">
             {/* Purchase No */}
             <div className="input-container">
-              <span className="icon"> {categoryIcon} </span>
+              <span className="icon"> {serialIcon} </span>
               <input
                 type="text"
                 name={"purchaseNo"}
@@ -105,7 +128,7 @@ const AddPurchase = ({ setOpenPurchase }) => {
 
             {/* Purchase Date */}
             <div className="input-container">
-              <span className="icon"> {categoryIcon} </span>
+              <span className="icon"> {dateIcon} </span>
               <input
                 type="date"
                 name={"purchaseDate"}
@@ -125,7 +148,7 @@ const AddPurchase = ({ setOpenPurchase }) => {
 
             {/* Supplier Name */}
             <div className="input-container">
-              <span className="icon"> {categoryIcon} </span>
+              <span className="icon"> {userIcon} </span>
               <input
                 type="text"
                 name={"supplierName"}
@@ -145,7 +168,7 @@ const AddPurchase = ({ setOpenPurchase }) => {
 
             {/* Product Name */}
             <div className="input-container">
-              <span className="icon"> {categoryIcon} </span>
+              <span className="icon"> {productIcon} </span>
               <input
                 type="text"
                 name={"productName"}
@@ -163,9 +186,29 @@ const AddPurchase = ({ setOpenPurchase }) => {
               <span className="input-highlight"></span>
             </div>
 
-               {/* Product Qunatity */}
-               <div className="input-container">
-              <span className="icon"> {categoryIcon} </span>
+            {/* Product Price */}
+            <div className="input-container">
+              <span className="icon"> {priceIcon} </span>
+              <input
+                type="number"
+                name={"productPrice"}
+                id={"productQuantity"}
+                autoComplete="productQuantity"
+                value={productQuantity}
+                onChange={handleChange}
+                placeholder="Enter Product Price"
+                className="input-field"
+              />
+
+              <label htmlFor={"productPrice"} className="input-label">
+                Product Price
+              </label>
+              <span className="input-highlight"></span>
+            </div>
+
+            {/* Product Qunatity */}
+            <div className="input-container">
+              <span className="icon"> {quantityIcon} </span>
               <input
                 type="number"
                 name={"productQuantity"}
@@ -183,24 +226,66 @@ const AddPurchase = ({ setOpenPurchase }) => {
               <span className="input-highlight"></span>
             </div>
 
-            {/* Category Name */}
+            {/* Product tag */}
+            <div className="input-container">
+              <span className="icon"> {tagIcon} </span>
+              <input
+                type="text"
+                name={"productTag"}
+                id={"productTag"}
+                autoComplete="productTag"
+                value={productTag}
+                onChange={handleChange}
+                placeholder="Enter Product Tag"
+                className="input-field"
+              />
+
+              <label htmlFor={"productTag"} className="input-label">
+                Product Tage
+              </label>
+              <span className="input-highlight"></span>
+            </div>
+
+            {/* Product Category */}
             <div className="input-container">
               <span className="icon"> {categoryIcon} </span>
               <select
-                name="categoryName"
-                id="categoryName"
-                value={categoryName}
+                name="text"
+                id="productCategory"
+                value={productCategory}
                 onChange={handleChange}
                 className="input-field"
               >
                 <option value="default">Select Product Category</option>
               </select>
 
-              <label htmlFor={"firstName"} className="input-label">
-                Categrory Name
+              <label htmlFor={"productCategory"} className="input-label">
+                Product Categrory
               </label>
               <span className="input-highlight"></span>
             </div>
+          </div>
+
+          <div className="input-textarea-container">
+            <span className="icon"> {messageIcon} </span>
+            <textarea
+              name="productDescription"
+              id="productDescription"
+              rows={6}
+              cols={30}
+              value={productDescription}
+              onChange={handleChange}
+              placeholder="Enter Product Description"
+              className="textarea-input-field"
+            ></textarea>
+
+            <label
+              htmlFor={"productDescription"}
+              className="textarea-input-label"
+            >
+              Product Description
+            </label>
+            <span className="textarea-input-highlight"></span>
           </div>
 
           {/* Consent */}
@@ -210,7 +295,8 @@ const AddPurchase = ({ setOpenPurchase }) => {
               name="agree"
               id="agree"
               checked={agree}
-              className="consent-checkbox"
+              onChange={() => setAgree(!agree)}
+              className="checkbox"
             />
             <label htmlFor="agree" className="accept">
               I accept
