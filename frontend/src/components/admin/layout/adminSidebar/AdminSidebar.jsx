@@ -281,10 +281,19 @@ const AdminSidebar = ({ isActive, setIsActive }) => {
 
         {/* Support and Logout */}
         <ul className="admin-sidebar-items">
-          <li
+        <li
             onClick={() => setIsActive(18)}
             className={
               isActive === 18 ? "active-sidebar-item" : "passive-sidebar-item"
+            }
+          >
+            <span className="sidebar-icon">{categoryIcon}</span>
+            Units
+          </li>
+          <li
+            onClick={() => setIsActive(19)}
+            className={
+              isActive === 19 ? "active-sidebar-item" : "passive-sidebar-item"
             }
           >
             <span className="sidebar-icon">{categoryIcon}</span>
@@ -292,9 +301,9 @@ const AdminSidebar = ({ isActive, setIsActive }) => {
           </li>
 
           <li
-            onClick={() => setIsActive(19)}
+            onClick={() => setIsActive(20)}
             className={
-              isActive === 19 ? "active-sidebar-item" : "passive-sidebar-item"
+              isActive === 20 ? "active-sidebar-item" : "passive-sidebar-item"
             }
           >
             <span className="sidebar-icon">{orderIcon}</span>

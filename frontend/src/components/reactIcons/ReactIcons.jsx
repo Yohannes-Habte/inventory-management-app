@@ -63,6 +63,9 @@ import { MdOutlineViewCompact } from "react-icons/md";
 import { BiSolidPurchaseTag } from "react-icons/bi";
 import { FaFileInvoiceDollar } from "react-icons/fa";
 import { FaPrint } from "react-icons/fa";
+import { FcSerialTasks } from "react-icons/fc";
+import { MdOutlineProductionQuantityLimits } from "react-icons/md";
+import { FaTag } from "react-icons/fa";
 
 const ReactIcons = () => {
   // user icons
@@ -203,13 +206,19 @@ const ReactIcons = () => {
   // Summary Icon
   const summaryIcon = <MdOutlineViewCompact />;
 
-  // Purchase, price and invoice Icons
+  // Purchase, price, quantity, and invoice Icons
   const purchaseIcon = <BiSolidPurchaseTag />;
   const invoiceIcon = <FaFileInvoiceDollar />;
   const priceIcon = <FaMoneyCheckAlt />;
+  const quantityIcon = <MdOutlineProductionQuantityLimits />
 
   // Print Icon
   const printIcon = <FaPrint />;
+
+  // Serial icon and tag icon
+  const serialIcon = <FcSerialTasks />
+  const tagIcon = <FaTag />
+
 
   return {
     userIcon,
@@ -277,6 +286,9 @@ const ReactIcons = () => {
     priceIcon,
     invoiceIcon,
     printIcon,
+    serialIcon,
+    quantityIcon,
+    tagIcon
   };
 };
 
