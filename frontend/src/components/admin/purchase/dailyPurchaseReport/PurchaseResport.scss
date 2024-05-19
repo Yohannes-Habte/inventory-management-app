@@ -1,0 +1,31 @@
+@import "../../../../styles/Variables.scss";
+@import "../../../../styles/Mixins.scss";
+
+.purchase-reports-container {
+  .purchase-reports-title {
+    @include subTitle;
+  }
+
+  .purchase-report-form {
+    @include flexRow;
+    align-items: center;
+
+    .input-container {
+      .input-label {
+       @include paragraph;
+      }
+
+      .input-field {
+        @include inputField;
+      }
+    }
+      
+      .purchase-report-btn {
+        @include button2;
+        margin-top: 2rem;
+        padding: 1.5rem 0;
+        @include flexCenter;
+      }
+    
+  }
+}
