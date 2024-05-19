@@ -1,11 +1,12 @@
-import React from 'react'
+import React from "react";
+import InventoryMap from "../../../map/InventoryMap";
 
 const Footer = () => {
   return (
     <footer>
-      Footer
+      <InventoryMap />
     </footer>
-  )
-}
+  );
+};
 
-export default Footer
+export default Footer;
