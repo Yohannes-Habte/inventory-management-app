@@ -5,7 +5,7 @@ import ReactIcons from "../../reactIcons/ReactIcons";
 
 const UserAddresses = () => {
   // Global Variables
-  const { closeIcon, trashIcon } = ReactIcons();
+  const { trashIcon } = ReactIcons();
 
   // Local state variable
   const [openAddAddress, setOpenAddAddress] = useState(false);
