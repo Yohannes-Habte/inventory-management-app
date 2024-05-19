@@ -66,6 +66,8 @@ import { FaPrint } from "react-icons/fa";
 import { FcSerialTasks } from "react-icons/fc";
 import { MdOutlineProductionQuantityLimits } from "react-icons/md";
 import { FaTag } from "react-icons/fa";
+import { FaCheckSquare } from "react-icons/fa";
+import { MdAddBox } from "react-icons/md";
 
 const ReactIcons = () => {
   // user icons
@@ -210,15 +212,20 @@ const ReactIcons = () => {
   const purchaseIcon = <BiSolidPurchaseTag />;
   const invoiceIcon = <FaFileInvoiceDollar />;
   const priceIcon = <FaMoneyCheckAlt />;
-  const quantityIcon = <MdOutlineProductionQuantityLimits />
+  const quantityIcon = <MdOutlineProductionQuantityLimits />;
 
   // Print Icon
   const printIcon = <FaPrint />;
 
   // Serial icon and tag icon
-  const serialIcon = <FcSerialTasks />
-  const tagIcon = <FaTag />
+  const serialIcon = <FcSerialTasks />;
+  const tagIcon = <FaTag />;
 
+  // Check Icon
+  const checkIcon = <FaCheckSquare />;
+
+  // Check Icon
+  const addIcon = <MdAddBox />;
 
   return {
     userIcon,
@@ -288,7 +295,9 @@ const ReactIcons = () => {
     printIcon,
     serialIcon,
     quantityIcon,
-    tagIcon
+    tagIcon,
+    checkIcon,
+    addIcon,
   };
 };
 

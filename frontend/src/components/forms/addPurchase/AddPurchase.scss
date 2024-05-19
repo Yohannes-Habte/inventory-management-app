@@ -6,8 +6,10 @@
 
   .add-purchase-popup-box {
     @include popupBox;
-    width: 700px;
-  
+    overflow-y: scroll;
+
+    width: 100%;
+    min-height: 100vh;
 
     .close {
       @include closeModal;
@@ -18,96 +20,90 @@
     }
 
     .add-purchase-form {
-      @include flexColumn;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      row-gap: 0.3rem;
+      column-gap: 0.3rem;
 
-      .inputs-wrapper {
-        @include twoGridTemplateEqualColumns;
-     
-
-        .input-container {
-          @include inputContainer;
-          .icon {
-            @include inputIcon;
-          }
-
-          .input-field {
-            @include inputField;
-          }
-
-          .input-label {
-            @include inputLabel;
-          }
-
-          .input-highlight {
-            @include inputHighlight;
-          }
-
-          .input-field:focus + .input-label {
-            top: -0.4rem;
-            font-size: $sfs;
-            color: $gray;
-          }
-
-          .input-field:focus + .input-label + .input-highlight {
-            width: 100%;
-          }
-        }
-      }
-
-      // Textarea input container
-      .input-textarea-container {
+      .input-container {
         @include inputContainer;
-
         .icon {
           @include inputIcon;
         }
 
-        .textarea-input-field {
+        .input-field {
           @include inputField;
         }
 
-        .textarea-input-label {
+        .input-label {
           @include inputLabel;
         }
 
-        .textarea-input-highlight {
+        .input-highlight {
           @include inputHighlight;
         }
 
-        .textarea-input-field:focus + .textarea-input-label {
+        .input-field:focus + .input-label {
           top: -0.4rem;
           font-size: $sfs;
           color: $gray;
         }
 
-        .textarea-input-field:focus
-          + .textarea-input-label
-          + .textarea-input-highlight {
+        .input-field:focus + .input-label + .input-highlight {
           width: 100%;
-        }
-      }
-
-      // Consent checkbox container
-
-      .input-consent {
-        @include flexRow;
-
-        .checkbox {
-          @include checkbox;
-        }
-
-        .accept {
-          @include termOfUse;
-          color: $black;
-        }
-
-        .terms-of-user {
-          @include termOfUse;
         }
       }
 
       .add-new-purchase-btn {
         @include button1;
+      }
+    }
+
+    .new-purchase-products-container {
+      margin-top: 2rem;
+      background-color: $section-bg;
+      padding: 1rem;
+      border-radius: 0.4rem;
+
+      .purchase-form {
+        @include flexColumn;
+        
+        .purchase-table {
+          width: 100%;
+          margin-top: 1rem;
+
+          .table-head {
+            background-color: $modal-bg;
+            .head-row {
+              .head-cell {
+                text-align: start;
+                font-size: $sfs;
+                padding: 1rem;
+                border-bottom: 1px solid $blue;
+              }
+            }
+          }
+
+          .purchase-table-body {
+            .purchase-body-row {
+              width: 100%;
+              .body-cell {
+                text-align: start;
+                font-size: $afs;
+                padding: 1rem;
+                border-bottom: 1px solid $gray;
+
+                .delete-icon {
+                  @include deleteIcon;
+                }
+              }
+            }
+          }
+        }
+
+        .add-new-purchase-btn {
+          @include button1;
+        }
       }
     }
   }

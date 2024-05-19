@@ -28,7 +28,7 @@ const UserSidebar = ({ isActive, setIsActive }) => {
             }
           >
             <span className="sidebar-icon">{userIcon}</span>
-            User Profile
+            Profile
           </li>
 
           <li
@@ -38,7 +38,7 @@ const UserSidebar = ({ isActive, setIsActive }) => {
             }
           >
             <span className="sidebar-icon">{addressIcon}</span>
-            User Address
+            Address
           </li>
 
           <li
@@ -71,7 +71,7 @@ const UserSidebar = ({ isActive, setIsActive }) => {
             Track Order
           </li>
 
-          <Link to={"/admin/dashboar"}>
+          <Link to={"/admin/dashboard"}>
             <li
               onClick={() => setIsActive(6)}
               className={
