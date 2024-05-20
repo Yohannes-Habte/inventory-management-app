@@ -1,11 +1,14 @@
 import React from "react";
 import Register from "../../../components/user/register/Register";
+import { Helmet } from "react-helmet-async";
 
 const RegisterPage = () => {
   return (
     <main>
+      <Helmet>
+        <title>Sign Up</title>
+      </Helmet>
       <article>
-        <h1>Sign Up page</h1>
         <Register />
       </article>
     </main>
