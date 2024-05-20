@@ -3,10 +3,20 @@ import "./Register.scss";
 import { Link, useNavigate } from "react-router-dom";
 import ReactIcons from "../../reactIcons/ReactIcons";
 import axios from "axios";
+import { validEmail, validPassword } from "../../utils/validators/Validate";
+import { toast } from "react-toastify";
+import { API } from "../../utils/security/secreteKey";
+import * as RegisterAction from "../../../redux/reducers/userReducer";
+import { useDispatch, useSelector } from "react-redux";
+import ButtonLoader from "../../utils/loader/ButtonLoader";
 
 const Register = () => {
   // to navigate register page
   const navigate = useNavigate();
+
+  // Gloabl state variables
+  const { u_postLoading } = useSelector((state) => state.user);
+  const dispatch = useDispatch();
 
   // Global icons
   const {
@@ -29,7 +39,7 @@ const Register = () => {
 
   // Function to show/hide password
   const displayPassword = () => {
-    setShowPassword((prevState) => !prevState);
+    setShowPassword((prevState) => (prevState = !prevState));
   };
 
   // Function that is used to update the state variables of the registration form
@@ -38,15 +48,19 @@ const Register = () => {
       case "firstName":
         setFirstName(event.target.value);
         break;
+
       case "lastName":
         setLastName(event.target.value);
         break;
+
       case "email":
         setEmail(event.target.value);
         break;
+
       case "confirmEmail":
         setConfirmEmail(event.target.value);
         break;
+
       case "password":
         setPassword(event.target.value);
         break;
@@ -54,9 +68,7 @@ const Register = () => {
       case "confirmPassword":
         setConfirmPassword(event.target.value);
         break;
-      case "showPassword":
-        setShowPassword(false);
-        break;
+
       default:
         break;
     }
@@ -67,7 +79,9 @@ const Register = () => {
     setFirstName("");
     setLastName("");
     setEmail("");
+    setConfirmEmail("");
     setPassword("");
+    setConfirmPassword("");
     setAgree(false);
   };
 
@@ -75,21 +89,32 @@ const Register = () => {
   const handleSubmit = async (event) => {
     event.preventDefault();
 
-    // Check validation
+    // Check Email and password validity
+    if (!validEmail(email) || !validEmail(confirmEmail)) {
+      toast.error("Enter valid email!");
+    } else if (!validPassword(password) || !validPassword(confirmPassword)) {
+      toast.error("Enter valid password!");
+    } else {
+      try {
+        dispatch(RegisterAction.userPostStart());
+        const newUser = {
+          firstName: firstName,
+          lastName: lastName,
+          email: email,
+          password: password,
+          agree: agree,
+        };
+        const { data } = await axios.post(`${API}/auths/register`, newUser);
 
-    try {
-      const newUser = {
-        firstName: firstName,
-        lastName: lastName,
-        email: email,
-        password: password,
-        agree: agree
-      };
-      const { data } = await axios.post(`http://localhost:9000/api/auths/register`, newUser);
-
-      navigate("/login");
-    } catch (err) {
-      console.log(err)
+        dispatch(RegisterAction.userPostSuccess(data.user));
+        toast.success(data.message);
+        reset();
+        navigate("/login");
+      } catch (err) {
+        dispatch(
+          RegisterAction.userPostFailure(toast.error(err.response.data.message))
+        );
+      }
     }
   };
   return (
@@ -224,7 +249,7 @@ const Register = () => {
           <input
             type="checkbox"
             name="agree"
-            onChange={updateChange}
+            onChange={() => setAgree(!agree)}
             className="user-signup-consent-input"
           />
           <span className="user-signup-accept">I accept</span>
@@ -233,7 +258,9 @@ const Register = () => {
 
         {/* Register button */}
         <div className="register-btn-container">
-          <button className="register-btn"> Register </button>
+          <button className="register-btn" disabled={u_postLoading}>
+            {u_postLoading ? <ButtonLoader /> : "Sign Up"}
+          </button>
         </div>
 
         {/* Already have an account */}

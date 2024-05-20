@@ -3,10 +3,20 @@ import "./Login.scss";
 import ReactIcons from "../../reactIcons/ReactIcons";
 import axios from "axios";
 import { Link, useNavigate } from "react-router-dom";
+import { validEmail, validPassword } from "../../utils/validators/Validate";
+import { toast } from "react-toastify";
+import { API } from "../../utils/security/secreteKey";
+import * as LoginAction from "../../../redux/reducers/userReducer";
+import { useDispatch, useSelector } from "react-redux";
+import ButtonLoader from "../../utils/loader/ButtonLoader";
 
 const Login = () => {
   // Navigate to
   const navigate = useNavigate();
+
+  // Global state variables
+  const { u_postLoading } = useSelector((state) => state.user);
+  const dispatch = useDispatch();
 
   const {
     emailIcon,
@@ -52,20 +62,31 @@ const Login = () => {
   const submitUserLogin = async (event) => {
     event.preventDefault();
 
-    // Check validation
+    // Check Email and password validity
+    if (!validEmail(email)) {
+      toast.error("Enter valid email!");
+    } else if (!validPassword(password)) {
+      toast.error("Enter valid password!");
+    } else {
+      try {
+        dispatch(LoginAction.userPostStart());
+        // The body
+        const loginUser = {
+          email: email,
+          password: password,
+        };
+        const { data } = await axios.post(`${API}/auths/login`, loginUser);
 
-    try {
-      // The body
-      const loginUser = {
-        email: email,
-        password: password,
-      };
-      const { data } = await axios.post(`/auth/login`, loginUser);
+        dispatch(LoginAction.userPostSuccess(data.user));
+        toast.success(data.message);
 
-      reset();
-      navigate("/");
-    } catch (err) {
-      console.log(err);
+        reset();
+        navigate("/");
+      } catch (err) {
+        dispatch(
+          LoginAction.userPostFailure(toast.error(err.response.data.message))
+        );
+      }
     }
   };
   return (
@@ -123,7 +144,9 @@ const Login = () => {
           </Link>
         </div>
 
-        <button className="user-login-btn"> Log In</button>
+        <button className="user-login-btn" disabled={u_postLoading}>
+          {u_postLoading ? <ButtonLoader /> : "Log In"}{" "}
+        </button>
         <p className="have-no-account">
           Don't have an account?{" "}
           <Link to="/register" className={"link-to"}>
