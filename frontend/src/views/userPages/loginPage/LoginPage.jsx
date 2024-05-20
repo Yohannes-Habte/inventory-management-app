@@ -1,12 +1,14 @@
 import React from "react";
 import Login from "../../../components/user/login/Login";
-
+import { Helmet } from "react-helmet-async";
 
 const LoginPage = () => {
   return (
     <main>
+      <Helmet>
+        <title> Log In </title>
+      </Helmet>
       <article>
-        <h1>Login page</h1>
         <Login />
       </article>
     </main>

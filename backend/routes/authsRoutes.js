@@ -1,12 +1,12 @@
 import express from "express";
-import { createUser } from "../controllers/authsController.js";
+import { createUser, loginUser } from "../controllers/authsController.js";
 
 // Auths Router
 const authRouter = express.Router();
 
 // Auths Routes
 authRouter.post("/register", createUser);
-authRouter.post("/login");
+authRouter.post("/login", loginUser);
 authRouter.put("/update");
 
 // Export Auths Router

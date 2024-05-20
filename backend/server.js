@@ -9,6 +9,7 @@ import colors from "colors";
 // Routers
 import authRouter from "./routes/authsRoutes.js";
 import userRouter from "./routes/userRoutes.js";
+import globalErrorHandler from "./middlewares/globalErrorHandler.js";
 
 // Express app
 const app = express();
@@ -34,9 +35,15 @@ const connectToMongoDB = async () => {
 
 app.use(morgan("tiny"));
 
-// End Poits
-app.use("/api/auths", authRouter)
-app.use("/api/users", userRouter)
+// End Points
+app.use("/api/auths", authRouter);
+app.use("/api/users", userRouter);
+
+// Static assets
+app.use(express.static("assets"));
+
+// Global error handler
+app.use(globalErrorHandler);
 
 // Port
 const port = process.env.PORT || 4000;
