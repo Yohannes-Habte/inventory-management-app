@@ -39,7 +39,6 @@ export const createUser = async (req, res, next) => {
 
       // generate user token
       const userRegisterToken = userToken(newUser._id);
-      console.log("token=", userRegisterToken);
 
       return res
         .cookie("user_token", userRegisterToken, {
@@ -92,7 +91,6 @@ export const loginUser = async (req, res, next) => {
 
       // generate user token
       const loginToken = userToken(user._id);
-      console.log("token=", loginToken);
 
       return res
         .cookie("user_token", loginToken, {
@@ -120,15 +118,88 @@ export const loginUser = async (req, res, next) => {
 // ===========================================================================================
 
 export const updateUser = async (req, res, next) => {
+  const {
+    firstName,
+    lastName,
+    image,
+    gender,
+    birthDate,
+    profession,
+    language,
+    phoneNumber,
+    agree,
+  } = req.body;
   try {
-  } catch (error) {}
+    const userId = req.params.id;
+    const user = await User.findById(userId);
+
+    if (!user) {
+      createError(400, "User does not exist! please try again!");
+    }
+
+    user.firstName = firstName;
+    user.lastName = lastName;
+    user.image = image;
+    user.gender = gender;
+    user.birthDate = birthDate;
+    user.profession = profession;
+    user.language = language;
+    user.phoneNumber = phoneNumber;
+    user.agree = agree;
+
+    try {
+      await user.save();
+    } catch (error) {
+      console.log(error);
+      return next(
+        createError(500, "User update could not be saved! Please try again!")
+      );
+    }
+
+    return res.status(201).json({
+      success: true,
+      user: user,
+      message: "User account successfully updated!",
+    });
+  } catch (error) {
+    console.log(error);
+    next(createError(500, "User account is not updated! Please try again!"));
+  }
 };
 
 // ===========================================================================================
 // Logout User
 // ===========================================================================================
 
-export const logoutUser = async (req, res, next) => {
+export const userLogout = async (req, res, next) => {
   try {
-  } catch (error) {}
+    res.clearCookie("user_token");
+    res.status(200).json(`You have successfully logged out`);
+  } catch (error) {
+    console.log(error)
+    next(createError(500, "User could not logout. Please try again!"));
+  }
+};
+
+// ===========================================================================================
+// Delete User Account
+// ===========================================================================================
+
+export const deleteUserAccount = async (req, res, next) => {
+  try {
+    const userId = req.params.id;
+    const user = await User.findById(userId);
+
+    if (!user) {
+      return next(createError(404, "User not found!"));
+    } else {
+      await User.findByIdAndDelete(userId);
+      res.clearCookie("user_token");
+      res.status(200).json(`User account has been successfully deleted!`);
+    }
+  } catch (error) {
+    return next(
+      createError(500, "User account could not be deleted. Please try again!")
+    );
+  }
 };
