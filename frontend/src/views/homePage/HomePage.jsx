@@ -1,13 +1,16 @@
 import React from "react";
+import "./HomePage.scss"
 import Header from "../../components/user/layout/header/Header";
 import Footer from "../../components/user/layout/footer/Footer";
+import Metronome from "../../components/metronome/Metronome";
 
 const HomePage = () => {
   return (
-    <main>
+    <main className="home-page">
       <Header />
-      <article>
-        <h1>Home page</h1>
+      <article className="home-page-container">
+        <h1 className="home-page-title">Landing page</h1>
+        <Metronome />
       </article>
 
       <Footer />

@@ -6,8 +6,8 @@ const userRouter = express.Router();
 
 // User Routes
 userRouter.get("/user", getUser);
-userRouter.delete("/user");
-userRouter.get("/counts");
+userRouter.delete("/");
+userRouter.get("/");
 
 // Export User Router
 export default userRouter;

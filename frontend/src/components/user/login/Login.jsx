@@ -81,7 +81,7 @@ const Login = () => {
         toast.success(data.message);
 
         reset();
-        navigate("/");
+        navigate("/user/profile");
       } catch (err) {
         dispatch(
           LoginAction.userPostFailure(toast.error(err.response.data.message))

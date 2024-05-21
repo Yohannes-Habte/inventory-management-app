@@ -3,10 +3,11 @@ import { createSlice } from "@reduxjs/toolkit";
 const initialState = {
   currentUser: null,
   users: [],
-  error: "",
+  error: null,
   u_postLoading: false,
   u_getLoading: false,
   u_updateLoading: false,
+  u_logoutLoading: false,
   u_deleteLoading: false,
 };
 
@@ -27,7 +28,7 @@ const userReducer = createSlice({
       state.error = action.payload;
     },
 
-    // Edit User
+    // Update User
     userUpdateStart: (state) => {
       state.u_updateLoading = true;
     },
@@ -53,12 +54,27 @@ const userReducer = createSlice({
       state.u_getLoading = false;
     },
 
+    // Logout User
+    userLogoutStart: (state) => {
+      state.u_logoutLoading = true;
+    },
+    userLogoutSuccess: (state, action) => {
+      state.currentUser = null;
+      state.error = null;
+      state.u_logoutLoading = false;
+    },
+    userLogoutFailure: (state, action) => {
+      state.error = action.payload;
+      state.u_logoutLoading = false;
+    },
+
     // Delete User
     userDeleteStart: (state) => {
       state.u_deleteLoading = true;
     },
-    userDeleteSuccess: (state, action) => {
-      state.currentUser = action.payload;
+    userDeleteSuccess: (state) => {
+      state.currentUser = null;
+      state.error = null;
       state.u_deleteLoading = false;
     },
     userDeleteFailure: (state, action) => {
@@ -84,6 +100,10 @@ export const {
   userGetStart,
   userGetSuccess,
   userGetFailure,
+
+  userLogoutStart,
+  userLogoutSuccess,
+  userLogoutFailure,
 
   userDeleteStart,
   userDeleteSuccess,

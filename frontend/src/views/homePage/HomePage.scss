@@ -1,0 +1,15 @@
+@import "../../styles/Variables.scss";
+@import "../../styles/Mixins.scss";
+
+.home-page {
+  .home-page-container {
+    width: $laptop;
+    margin: 1rem auto;
+    background-color: $main-bg;
+    min-height: 100vh;
+
+    .home-page-title {
+        @include title;
+    }
+  }
+}

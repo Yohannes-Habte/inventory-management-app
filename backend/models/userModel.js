@@ -29,8 +29,8 @@ const userSchema = new Schema(
     comments: [],
     role: {
       type: String,
-      default: "Employee",
-      enum: ["Employee", "HOD", "CFO", "CEO"],
+      default: "employee",
+      enum: ["employee", "admin"],
     },
 
     agree: { type: Boolean, required: true },
