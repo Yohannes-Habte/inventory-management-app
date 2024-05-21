@@ -76,7 +76,7 @@ const ReactIcons = () => {
   const adminIcon = <RiAdminFill />;
   const managerIcon = <FcManager />;
   const accountIcon = <MdAccountCircle />;
-  const profesionIcon = <FaUserGraduate />;
+  const professionIcon = <FaUserGraduate />;
 
   // Email icon
   const emailIcon = <MdEmail />;
@@ -277,7 +277,7 @@ const ReactIcons = () => {
     todoIcon,
     managerIcon,
     accountIcon,
-    profesionIcon,
+    professionIcon,
     dashboardIcon,
     ratingIcon,
     categoryIcon,

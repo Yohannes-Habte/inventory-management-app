@@ -13,6 +13,7 @@ import "leaflet/dist/leaflet.css";
 import "leaflet-draw/dist/leaflet.draw.css";
 import additionalProvider from "./additionalProvider.js";
 import { statesData } from "../../data/GeographicData.js";
+import MyTabs from "../myTabs/TabsInventoryMap.jsx";
 
 // delete L.Icon.Default.prototype._getIconUrl;
 
@@ -175,6 +176,8 @@ const InventoryMap = () => {
       <div>
         <button onClick={showMyLocation}>Locate Me</button>
       </div>
+
+
     </>
   );
 };

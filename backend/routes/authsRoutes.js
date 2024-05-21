@@ -1,13 +1,21 @@
 import express from "express";
-import { createUser, loginUser } from "../controllers/authsController.js";
+import {
+  createUser,
+  deleteUserAccount,
+  loginUser,
+  updateUser,
+  userLogout,
+} from "../controllers/authsController.js";
 
-// Auths Router
+// Auth Router
 const authRouter = express.Router();
 
-// Auths Routes
+// Auth Routes
 authRouter.post("/register", createUser);
 authRouter.post("/login", loginUser);
-authRouter.put("/update");
+authRouter.put("/:id/update", updateUser);
+authRouter.get("/logout", userLogout);
+authRouter.delete("/delete/:id", deleteUserAccount);
 
-// Export Auths Router
+// Export Auth Router
 export default authRouter;
