@@ -9,6 +9,7 @@ import { API } from "../../utils/security/secreteKey";
 import * as LoginAction from "../../../redux/reducers/userReducer";
 import { useDispatch, useSelector } from "react-redux";
 import ButtonLoader from "../../utils/loader/ButtonLoader";
+import GoogleRegisterLogin from "../googleReLo/GoogleRegisterLogin";
 
 const Login = () => {
   // Navigate to
@@ -80,6 +81,13 @@ const Login = () => {
         dispatch(LoginAction.userPostSuccess(data.user));
         toast.success(data.message);
 
+        // Local Storage
+        const now = new Date();
+        const tokenExpiry = new Date(now.getTime() + 1000 * 60 * 60);
+        localStorage.setItem("userInfo", JSON.stringify(loginUser), {
+          expiry: tokenExpiry.toISOString(),
+        });
+
         reset();
         navigate("/user/profile");
       } catch (err) {
@@ -147,6 +155,10 @@ const Login = () => {
         <button className="user-login-btn" disabled={u_postLoading}>
           {u_postLoading ? <ButtonLoader /> : "Log In"}{" "}
         </button>
+
+        {/* Google Button */}
+        <GoogleRegisterLogin login={"login"} />
+
         <p className="have-no-account">
           Don't have an account?{" "}
           <Link to="/register" className={"link-to"}>
