@@ -9,6 +9,7 @@ import { API } from "../../utils/security/secreteKey";
 import * as RegisterAction from "../../../redux/reducers/userReducer";
 import { useDispatch, useSelector } from "react-redux";
 import ButtonLoader from "../../utils/loader/ButtonLoader";
+import GoogleRegisterLogin from "../googleReLo/GoogleRegisterLogin";
 
 const Register = () => {
   // to navigate register page
@@ -262,6 +263,9 @@ const Register = () => {
             {u_postLoading ? <ButtonLoader /> : "Sign Up"}
           </button>
         </div>
+
+        {/* Google Button */}
+        <GoogleRegisterLogin signUp={"signUp"} />
 
         {/* Already have an account */}
         <p className="have-account">
