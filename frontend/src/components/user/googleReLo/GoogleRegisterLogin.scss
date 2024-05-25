@@ -1,0 +1,20 @@
+@import "../../../styles/Variables.scss";
+@import "../../../styles/Mixins.scss";
+
+.google-buttons-container {
+  position: relative;
+  width: fit-content;
+
+
+  .google-icon {
+    position: absolute;
+   left: 0.5rem;
+    top: 50%;
+    transform: translatey(-50%);
+  }
+  .google-btn {
+    @include googleButton;
+    padding-left: 2rem;
+    
+  }
+}
