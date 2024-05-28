@@ -11,7 +11,7 @@ const HomePage = () => {
     <main className="home-page">
       <Header />
       <article className="home-page-container">
-        <h1 className="home-page-title">Landing page</h1>
+        <h1 className="home-page-title">Home Page</h1>
         <Metronome />
 
         <h4>Date</h4>
