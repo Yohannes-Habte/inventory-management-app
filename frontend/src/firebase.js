@@ -8,7 +8,7 @@ import { initializeApp } from "firebase/app";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyDC32QoDZmbMoYsIrgU12W_SlrTsA1K-ak",
+  apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
   authDomain: "inventory-management-app-713b9.firebaseapp.com",
   projectId: "inventory-management-app-713b9",
   storageBucket: "inventory-management-app-713b9.appspot.com",
